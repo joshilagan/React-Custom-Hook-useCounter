@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import useCounter from './component/useCounter';
 
 function App() {
+ const [count, add, lessen, clear] = useCounter()
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Counter</h1>
+      <button onClick={add}>Increase</button>
+      <button onClick={lessen}>Decrease</button>
+      <button onClick={clear}>Set to Zero</button>
+      <p>{count}</p>
     </div>
   );
 }
